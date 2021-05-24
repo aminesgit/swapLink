@@ -1,0 +1,54 @@
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #222;
+    overflow: hidden;
+}
+
+#app {
+    width: 100vw;
+    height: 100vh;
+    padding: 1em;
+}
+
+.linksInputDiv {
+    width: 100vw;
+    border: none;
+    outline: none;
+}
+
+.linksInput {
+    width: calc(100vw - 4em);
+    height: calc(100vh - 3.5em);
+    font-size: 20px;
+    padding: 1em;
+    border-radius: 0.5em;
+    outline: none;
+    border: none;
+}
+
+.controlBar {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    justify-content: center;
+    width: calc(100vw - 2em);
+}
+
+.startBtn {
+    font-size: 1.5em;
+    padding: 0.1em 0.5em;
+}
+
+.durationInput {
+    font-size: 20px; 
+    width: 50px;
+    text-align: center;
+    outline: none;
+    border: none;
+    background-color: rgb(75, 75, 75);
+}
