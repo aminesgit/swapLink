@@ -44,7 +44,7 @@ function sleep( sleepDuration ){
 
 const openLink = async (lnk, dur) => {
     console.log("We wait")
-    window.open(lnk , "sky" , "_blank")
+    window.open(lnk , "sky" , '_system')
     sleep(dur)
     console.log("That happen")
 }
