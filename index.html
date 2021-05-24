@@ -13,8 +13,54 @@
     <body>
         <div id="app"></div>
         
-        <a href="whatsapp://app">Open WhatsApp</a>
+        <a href="whatsapp://whatsapp?text=Hello%20World"
+            data-store-android="https://play.google.com/store/apps/details?id=com.whatsapp"
+            data-store-ios="https://itunes.apple.com/app/id310633997">
+            Say “Hello World” on WhatsApp!
+        </a>
         
         <script src="./script.js"></script>
+        
+        <script>
+            var links,
+                os = {
+                    android: navigator.userAgent.match(/Android/i),
+                    ios:     navigator.userAgent.match(/iPhone|iPad|iPod/i)
+                };
+
+            if(os.android || os.ios) {
+                links = document.querySelectorAll('[data-store-android], [data-store-ios]');
+
+                // Iterate through elements
+                Array.prototype.forEach.call(links, function(el) {
+                    // Do something when link is clicked
+                    el.onclick = function() {
+                        var button = el,
+                            delay = 1000,
+                            start = new Date().getTime();
+
+                        // Start the timeout
+                        setTimeout(function() {
+                            var end = new Date().getTime();
+
+                            // Check if the page is visible
+                            // If this timeout is triggered after 2 * delay,
+                            // it's likely the user went away, the browser
+                            // didn't fire a blur event or alike and paused JS from executing
+                            // which means the link probably worked
+                            if(
+                                visibly.hidden() ||
+                                now - start >= delay * 2
+                            ) return;
+
+                            // Get shop URL
+                            var shop = os.android ? button.dataset.storeAndroid : button.dataset.storeIos;
+                            window.location.href = shop;
+                        }, delay);
+                    };
+                });
+            }
+        </script>
+        
     </body>
 </html>
