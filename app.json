@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "swapLink",
+    "slug": "swapLink",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./favicon.png",
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.swap.link"
+    },
+    "web": {
+      "favicon": "./favicon.png"
+    }
+  }
+}
