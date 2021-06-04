@@ -12,7 +12,7 @@ import {
   Linking
 } from 'react-native';
 import { Audio } from 'expo-av';
-import colors from "./constants/colors"
+import colors from "./App/constant/colors"
 
 export default function App() {
 
@@ -27,7 +27,7 @@ export default function App() {
   const playSound = async () => {
     console.log('Loading Sound');
     const { sound } = await Audio.Sound.createAsync(
-       require('./assets/bellSound.wav')
+       require('./App/assets/bellSound.wav')
     );
     setSound(sound);
     await sound.playAsync(); 
@@ -76,7 +76,7 @@ export default function App() {
       Alert.alert(`You forget to put the URLs`);
     } else {
       setIsRun(true)
-      const URLs = URLsValue.split("\n")
+      const URLs = URLsValue.split("\n").filter((url) => url != "")
       setLinksNumber(URLs.length)
       let timeout = duration * URLs.length
       for (let i = 0; i < URLs.length; i++) {
@@ -122,7 +122,7 @@ export default function App() {
               placeholder="Put your URLs here ..."/>
           <View style={styles.trashIconContainer}>
             <TouchableOpacity style={styles.trashIconView} onPress={clear}>
-              <Image source={require("./assets/trashIcon.png")} 
+              <Image source={require("./App/assets/trashIcon.png")} 
                     style={styles.trashIcon} />
             </TouchableOpacity>
           </View>
