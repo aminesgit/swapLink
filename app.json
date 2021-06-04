@@ -1,10 +1,15 @@
 {
   "expo": {
-    "name": "swapLink",
-    "slug": "swapLink",
-    "version": "1.0.0",
+    "name": "Swap Link",
+    "slug": "swaplink",
+    "version": "1.1.5",
     "orientation": "portrait",
-    "icon": "./favicon.png",
+    "icon": "./App/assets/favicon.png",
+    "splash": {
+      "backgroundColor" : "#2C3037",
+      "image" : "./App/assets/splashImg.png",
+      "resizeMode" : "contain"
+    },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
